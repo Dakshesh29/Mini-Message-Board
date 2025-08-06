@@ -1,5 +1,6 @@
 import express from "express";
-const router = express.Router;
+
+const router = express.Router(); // <-- this line is essential!
 
 const messages = [
   {
@@ -23,20 +24,9 @@ router.get("/new", (req, res) => {
 });
 
 router.post("/new", (req, res) => {
-  const { messagesText, messagesUser } = req.body;
-  messages.push({
-    text: messagesText,
-    user: messagesUser,
-    added: new Date(),
-  });
+  const { messageText, messageUser } = req.body;
+  messages.push({ text: messageText, user: messageUser, added: new Date() });
   res.redirect("/");
 });
 
-router.get("/message/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const message = messages[id];
-  if (!message) return res.status(404).send("Message not found");
-  res.render("message", { message });
-});
-
-module.exports = router;
+export default router;
