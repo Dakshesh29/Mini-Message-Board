@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <a href="/new">Create a new message</a>
-    <ul>
-      <% messages.forEach((msg, idx) => { %>
-      <li>
-        <strong><%= msg.user %></strong>: <%= msg.text %> <br />
-        <small><%= msg.added.toLocaleString() %></small><br />
-        <a href="/message/<%= idx %>">Open</a>
-      </li>
-      <% }) %>
-    </ul>
+    <head>
+      <meta charset="UTF-8" />
+      <title><%= title %></title>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+
+    <div class="container">
+      <h1><%= title %></h1>
+
+      <% messages.forEach(function(message) { %>
+      <div class="message">
+        <p class="user"><%= message.user %></p>
+        <p><%= message.text %></p>
+        <p class="date"><%= message.added.toLocaleString() %></p>
+      </div>
+      <% }); %>
+
+      <a class="button-link" href="/new">Add a New Message</a>
+    </div>
   </body>
 </html>
