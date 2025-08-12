@@ -1,6 +1,7 @@
 {
   "name": "mini-message-board",
   "version": "1.0.0",
+  "description": "A simple message board app built with Express and EJS",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -10,16 +11,22 @@
     "type": "git",
     "url": "git+https://github.com/Dakshesh29/Mini-Message-Board.git"
   },
-  "keywords": [],
+  "keywords": [
+    "express",
+    "message-board",
+    "nodejs"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Dakshesh29/Mini-Message-Board/issues"
   },
   "homepage": "https://github.com/Dakshesh29/Mini-Message-Board#readme",
-  "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=18.x"
   }
 }
